@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ejercicioPotencia.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;EjercicioDemostrativo&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">clases</a> &gt; <span class="el_source">ejercicioPotencia.java</span></div><h1>ejercicioPotencia.java</h1><pre class="source lang-java linenums">/*
+
+ */
+package clases;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *
+ * @author Miguel
+ */
+<span class="nc" id="L13">public class ejercicioPotencia {</span>
+  
+    public static String potencia2(int exp) {
+<span class="fc bfc" id="L16" title="All 2 branches covered.">        if (exp == 0) {</span>
+<span class="fc" id="L17">            return &quot;0&quot;;</span>
+        } else {
+<span class="fc" id="L19">            List&lt;Integer&gt; digits = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L20">            digits.add(1);</span>
+<span class="fc" id="L21">            int size = 1;</span>
+            int tmp;
+<span class="fc" id="L23">            int ac = 0;</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">            for (int i = 0; i &lt; exp; i++) {</span>
+<span class="fc bfc" id="L25" title="All 2 branches covered.">                for (int c = 0; c &lt; size; c++) {</span>
+<span class="fc" id="L26">                    tmp = digits.get(c);</span>
+<span class="fc" id="L27">                    tmp *= 2;</span>
+<span class="fc" id="L28">                    tmp += ac;</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">                    if (tmp &gt; 9) {</span>
+<span class="fc" id="L30">                        tmp -= 10;</span>
+<span class="fc" id="L31">                        ac = 1;</span>
+                    } else {
+<span class="fc" id="L33">                        ac = 0;</span>
+                    }
+<span class="fc" id="L35">                    digits.set(c, tmp);</span>
+                }
+<span class="fc bfc" id="L37" title="All 2 branches covered.">                if (ac == 1) {</span>
+<span class="fc" id="L38">                    digits.add(ac);</span>
+<span class="fc" id="L39">                    size++;</span>
+<span class="fc" id="L40">                    ac = 0;</span>
+                }
+            }
+<span class="fc" id="L43">            String s = &quot;&quot;;</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">            for (int i = digits.size() - 1; i &gt;= 0; i--) {</span>
+<span class="fc" id="L45">                s += digits.get(i);      </span>
+            }
+<span class="fc" id="L47">            return s;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
